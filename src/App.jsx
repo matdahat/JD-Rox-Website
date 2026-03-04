@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mic2, Activity, Disc3, Radio, PlayCircle, Instagram, Facebook, Youtube, Music as MusicIcon } from 'lucide-react';
+import { Mic2, Activity, Disc3, Radio, PlayCircle, Instagram, Facebook, Youtube, Music as MusicIcon, Menu, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -74,6 +74,7 @@ const Magnetic = ({ children }) => {
 
 const Navbar = () => {
     const navRef = useRef(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useGSAP(() => {
         ScrollTrigger.create({
@@ -88,25 +89,43 @@ const Navbar = () => {
         });
     });
 
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     return (
-        <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full flex items-center gap-8 transition-colors text-background w-[90%] md:w-auto justify-between md:justify-center border border-transparent">
-            <Magnetic>
-                <a href="#" className="font-sans font-bold tracking-tight text-lg hover-lift inline-block">
-                    <span className="block pointer-events-none">JD Rox</span>
-                </a>
-            </Magnetic>
-            <div className="hidden md:flex items-center gap-6 opacity-80">
-                <Magnetic><a href="#features" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Talent</span></a></Magnetic>
-                <Magnetic><a href="#about" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">About</span></a></Magnetic>
-                <Magnetic><a href="#gallery" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Gallery</span></a></Magnetic>
-                <Magnetic><a href="#music" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Music</span></a></Magnetic>
-            </div>
-            <Magnetic>
-                <a href="https://open.spotify.com/artist/6mCxbULJQ2WfUm33gUTTW8?si=2nSqDTErTK-jDLquz9gEQw" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-5 py-2 rounded-full font-mono text-xs uppercase tracking-wider font-semibold inline-block">
-                    <span className="relative z-10 block pointer-events-none">Stream</span>
-                </a>
-            </Magnetic>
-        </nav>
+        <>
+            <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-[60] px-6 py-3 rounded-full flex items-center gap-4 md:gap-8 transition-colors text-background w-[90%] md:w-auto justify-between md:justify-center border border-transparent">
+                <Magnetic>
+                    <a href="#" className="font-sans font-bold tracking-tight text-lg hover-lift inline-block">
+                        <span className="block pointer-events-none">JD Rox</span>
+                    </a>
+                </Magnetic>
+                <div className="hidden md:flex items-center gap-6 opacity-80">
+                    <Magnetic><a href="#features" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Talent</span></a></Magnetic>
+                    <Magnetic><a href="#about" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">About</span></a></Magnetic>
+                    <Magnetic><a href="#gallery" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Gallery</span></a></Magnetic>
+                    <Magnetic><a href="#music" className="hover-lift inline-block font-mono text-[11px] uppercase tracking-widest font-normal text-current"><span className="block pointer-events-none">Music</span></a></Magnetic>
+                </div>
+                <div className="flex items-center gap-2 md:gap-4">
+                    <Magnetic>
+                        <a href="https://open.spotify.com/artist/6mCxbULJQ2WfUm33gUTTW8?si=2nSqDTErTK-jDLquz9gEQw" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-5 py-2 rounded-full font-mono text-xs uppercase tracking-wider font-semibold inline-block">
+                            <span className="relative z-10 block pointer-events-none">Stream</span>
+                        </a>
+                    </Magnetic>
+                    <button className="md:hidden p-1 text-current flex items-center justify-center" onClick={toggleMenu} aria-label="Toggle Menu">
+                        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
+            </nav>
+
+            {isMenuOpen && (
+                <div className="fixed inset-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 md:hidden">
+                    <a href="#features" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Talent</a>
+                    <a href="#about" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">About</a>
+                    <a href="#gallery" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Gallery</a>
+                    <a href="#music" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Music</a>
+                </div>
+            )}
+        </>
     );
 };
 
