@@ -10,7 +10,9 @@ export default {
                 background: '#F0EFF4',
                 primary: '#0A0A14',
                 accent: '#FF1A1A',
-                textDark: '#18181B'
+                textDark: '#18181B',
+                neonGreen: '#39FF14',
+                neonPurple: '#B026FF'
             },
             fontFamily: {
                 sans: ['"Sora"', 'sans-serif'],
