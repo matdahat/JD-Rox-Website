@@ -596,10 +596,10 @@ const GetStarted = () => {
                 <Radio className="w-16 h-16 text-accent mb-8" strokeWidth={1} />
                 <h2 className="font-impact uppercase tracking-wide text-5xl md:text-7xl text-background mb-8">Ready to dive in?</h2>
                 <Magnetic>
-                    <a href="https://open.spotify.com/track/7yeeEIXcInrF9mJHih8Y9i?si=1924c99decb8436b" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-10 py-5 rounded-[3rem] font-sans font-bold text-lg inline-block shadow-[0_0_40px_rgba(255,26,26,0.4)] w-fit">
+                    <a href="https://open.spotify.com/artist/6mCxbULJQ2WfUm33gUTTW8?si=rMIzkq7lRcOh1KCIJ7-Y9Q" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-10 py-5 rounded-[3rem] font-sans font-bold text-lg inline-block shadow-[0_0_40px_rgba(255,26,26,0.4)] w-fit">
                         <span className="flex items-center justify-center gap-3 relative z-10 pointer-events-none">
                             <PlayCircle className="w-6 h-6 relative z-10" />
-                            <span className="relative z-10">Stream Latest Release on Spotify</span>
+                            <span className="relative z-10">Latest Releases On Spotify</span>
                         </span>
                     </a>
                 </Magnetic>
