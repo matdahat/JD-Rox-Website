@@ -117,14 +117,12 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {isMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 md:hidden">
-                    <a href="#features" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Talent</a>
-                    <a href="#about" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">About</a>
-                    <a href="#gallery" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Gallery</a>
-                    <a href="#music" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Music</a>
-                </div>
-            )}
+            <div className={`fixed inset-0 z-[55] bg-[#0a0a0a]/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                <a href="#features" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Talent</a>
+                <a href="#about" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">About</a>
+                <a href="#gallery" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Gallery</a>
+                <a href="#music" onClick={toggleMenu} className="font-sans font-bold text-3xl text-white hover:text-accent transition-colors">Music</a>
+            </div>
         </>
     );
 };
