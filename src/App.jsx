@@ -537,6 +537,14 @@ const Gallery = () => {
                             <img src="/jd-gallery-2.jpg" alt="JD Rox portrait" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
+                        <div className="relative group overflow-hidden rounded-[2rem] bg-background/5 shadow-2xl aspect-[3/4] gallery-img">
+                            <img src="/jd-gallery-6.jpg" alt="JD Rox live stage" className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div className="relative group overflow-hidden rounded-[2rem] bg-background/5 shadow-2xl aspect-square gallery-img">
+                            <img src="/jd-gallery-8.jpg" alt="JD Rox live DJ set" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 object-top" />
+                            <div className="absolute inset-0 border border-accent/20 rounded-[2rem] m-4 pointer-events-none"></div>
+                        </div>
                     </div>
 
                     {/* Column 2 */}
@@ -548,6 +556,10 @@ const Gallery = () => {
                         <div className="relative group overflow-hidden rounded-[2rem] bg-background/5 shadow-2xl aspect-[3/4] gallery-img">
                             <img src="/jd-gallery-4.jpg" alt="JD Rox recording" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div className="relative group overflow-hidden rounded-[2rem] bg-background/5 shadow-2xl aspect-[4/5] gallery-img">
+                            <img src="/jd-gallery-7.jpg" alt="JD Rox live crowd" className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+                            <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-accent animate-pulse shadow-[0_0_15px_rgba(255,26,26,0.6)]"></div>
                         </div>
                     </div>
                 </div>
