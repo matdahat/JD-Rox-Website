@@ -670,6 +670,8 @@ const FollowHub = () => {
 };
 
 const Footer = () => {
+    const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+    const [isTermsOpen, setIsTermsOpen] = useState(false);
     return (
         <footer className="bg-textDark text-background pt-24 pb-8 px-8 md:px-16 rounded-t-[4rem] relative z-20">
             <div className="max-w-7xl mx-auto flex flex-col">
@@ -696,8 +698,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-4 font-mono text-xs uppercase tracking-widest">
-                        <a href="#" className="text-white/70 hover:text-accent transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-white/70 hover:text-accent transition-colors">Terms of Service</a>
+                        <button onClick={(e) => { e.preventDefault(); setIsPrivacyOpen(true); }} className="text-white/70 hover:text-accent transition-colors text-left uppercase">Privacy Policy</button>
+                        <button onClick={(e) => { e.preventDefault(); setIsTermsOpen(true); }} className="text-white/70 hover:text-accent transition-colors text-left uppercase">Terms of Service</button>
                     </div>
                 </div>
 
@@ -709,6 +711,133 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Privacy Policy Modal */}
+            {isPrivacyOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 overflow-y-auto">
+                    <div className="bg-background border border-white/10 rounded-[2rem] p-8 md:p-12 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative my-auto">
+                        <button
+                            onClick={() => setIsPrivacyOpen(false)}
+                            className="absolute top-6 right-6 p-2 text-white/50 hover:text-accent transition-colors bg-white/5 rounded-full hover:bg-white/10"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <h2 className="font-impact text-4xl md:text-5xl text-white mb-2 uppercase tracking-wide">Privacy Policy for JD-Rox</h2>
+                        <p className="font-mono text-xs text-accent uppercase tracking-widest mb-10">Last Updated: February 9, 2026</p>
+
+                        <div className="space-y-8 font-sans text-white/80 leading-relaxed text-sm md:text-base">
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">1. Introduction</h3>
+                                <p>Welcome to www.jdrox.com. We respect your privacy and are committed to protecting your personal data. This policy explains how we handle information when you visit our site.</p>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">2. Data We Collect</h3>
+                                <ul className="list-disc pl-5 space-y-2">
+                                    <li><strong className="text-white">Usage Data:</strong> We may collect information on how the Service is accessed and used (e.g., IP address, browser type, time spent on pages).</li>
+                                    <li><strong className="text-white">Cookies:</strong> We use basic cookies to enhance your experience. You can instruct your browser to refuse all cookies.</li>
+                                    <li><strong className="text-white">Third-Party Embeds:</strong> Our site features a Spotify player. When you interact with this player, Spotify may collect data according to its own privacy policy.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">3. How We Use Your Data</h3>
+                                <p className="mb-2">We use the collected data to:</p>
+                                <ul className="list-disc pl-5 space-y-2">
+                                    <li>Maintain and improve the website.</li>
+                                    <li>Monitor usage patterns to ensure the hero sequence and media play correctly.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">4. GDPR Compliance (UK/EU)</h3>
+                                <p className="mb-2">As a resident of Tatsfield, UK, I ensure this site complies with UK GDPR. You have the right to:</p>
+                                <ul className="list-disc pl-5 space-y-2">
+                                    <li>Access the data we hold about you.</li>
+                                    <li>Request that we delete any personal data.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">5. Contact Me</h3>
+                                <p>If you have any questions about this Privacy Policy, please contact me through the official JD-Rox channels or my professional stable at Audiofreaks.</p>
+                            </section>
+                        </div>
+
+                        <div className="mt-12 pt-6 border-t border-white/10 text-center">
+                            <button
+                                onClick={() => setIsPrivacyOpen(false)}
+                                className="magnetic-btn bg-accent text-white px-8 py-3 rounded-full font-sans font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(255,26,26,0.3)] hover:shadow-[0_0_30px_rgba(255,26,26,0.6)] transition-all"
+                            >
+                                CLOSE POLICY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Terms of Service Modal */}
+            {isTermsOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 overflow-y-auto">
+                    <div className="bg-background border border-white/10 rounded-[2rem] p-8 md:p-12 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative my-auto">
+                        <button
+                            onClick={() => setIsTermsOpen(false)}
+                            className="absolute top-6 right-6 p-2 text-white/50 hover:text-accent transition-colors bg-white/5 rounded-full hover:bg-white/10"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <h2 className="font-impact text-4xl md:text-5xl text-white mb-2 uppercase tracking-wide">Terms of Service for JD-Rox</h2>
+                        <p className="font-mono text-xs text-accent uppercase tracking-widest mb-10">Last Updated: March 7, 2026</p>
+
+                        <div className="space-y-8 font-sans text-white/80 leading-relaxed text-sm md:text-base">
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">1. Acceptance of Terms</h3>
+                                <p>By accessing www.jdrox.com, you agree to be bound by these Terms of Service and all applicable laws and regulations in the United Kingdom.</p>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">2. Intellectual Property Rights</h3>
+                                <p className="mb-2">All content on this site—including music, videos, the 193-frame hero sequence, text, and logos—is the property of Warren David Meyers (JD Rox) or its licensors.</p>
+                                <ul className="list-disc pl-5 space-y-2">
+                                    <li><strong className="text-white">Personal Use:</strong> You may view and listen to the content for personal, non-commercial use.</li>
+                                    <li><strong className="text-white">Prohibitions:</strong> You may not copy, redistribute, or "rip" audio or video from this site for commercial purposes without express written consent from Audiofreaks Music or the artist.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">3. Third-Party Links & Players</h3>
+                                <p>This site features embeds from Spotify, YouTube, and other third-party services. Your use of those features is governed by their respective terms. We are not responsible for the content or practices of these external services.</p>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">4. Disclaimer of Liability</h3>
+                                <p>The site is provided "as is." While we strive for perfection (just like in the studio), we cannot guarantee the site will be 100% error-free or uninterrupted.</p>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">5. Governing Law</h3>
+                                <p>These terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts in the United Kingdom.</p>
+                            </section>
+
+                            <section>
+                                <h3 className="text-xl text-white font-bold mb-3 border-b border-white/10 pb-2">6. Changes to Terms</h3>
+                                <p>We reserve the right to tweak these terms as the JD Rox project evolves. Your continued use of the site means you accept the "new mix."</p>
+                            </section>
+                        </div>
+
+                        <div className="mt-12 pt-6 border-t border-white/10 text-center">
+                            <button
+                                onClick={() => setIsTermsOpen(false)}
+                                className="magnetic-btn bg-accent text-white px-8 py-3 rounded-full font-sans font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(255,26,26,0.3)] hover:shadow-[0_0_30px_rgba(255,26,26,0.6)] transition-all"
+                            >
+                                CLOSE TERMS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </footer>
     )
 }
