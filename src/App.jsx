@@ -243,8 +243,8 @@ const HeroSequence = ({ onLoaded, children }) => {
 
             {/* Canvas Background */}
             <div className="absolute inset-0 z-0 overflow-hidden bg-[#0a0a0a]">
-                <canvas ref={canvasRef} className="w-full h-full block" />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+                <canvas ref={canvasRef} className="w-full h-full block brightness-125 saturate-110" />
+                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent pointer-events-none"></div>
             </div>
 
