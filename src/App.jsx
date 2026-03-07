@@ -676,12 +676,24 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
                     <div>
                         <div className="font-sans font-bold text-3xl mb-4 text-white">JD Rox</div>
-                        <p className="font-mono text-xs uppercase tracking-widest text-white/50 max-w-xs leading-relaxed">High-energy melodic house and techno, merging soul-driven vocals with underground club precision.</p>
+                        <p className="font-mono text-xs uppercase tracking-widest text-white/50 max-w-xs leading-relaxed">RAW-ENERGY HIP HOUSE INSPIRED RAPPY VOCALS FOR THE ELECTRONIC DANCE-FLOORS, MERGING RAP-DRIVEN VOCALS WITH UNDERGROUND CLUB PRECISION.</p>
                     </div>
-                    <div className="flex flex-col gap-4 font-mono text-xs uppercase tracking-widest">
-                        <a href="#" className="text-white/70 hover:text-accent transition-colors">Instagram</a>
-                        <a href="#" className="text-white/70 hover:text-accent transition-colors">Spotify</a>
-                        <a href="#" className="text-white/70 hover:text-accent transition-colors">Soundcloud</a>
+                    <div className="flex flex-col gap-3">
+                        <span className="font-mono text-[10px] text-accent uppercase tracking-widest drop-shadow-[0_0_5px_rgba(255,26,26,0.8)]">Powered By</span>
+                        <a href="https://www.audiofreaksmusic.com" target="_blank" rel="noopener noreferrer" className="font-sans font-bold text-xl md:text-2xl text-white hover:text-accent transition-all duration-300 hover:drop-shadow-[0_0_15px_rgba(255,26,26,0.5)]">
+                            AUDIOFREAKS MUSIC
+                        </a>
+                        <div className="w-12 h-[1px] bg-white/20 my-1"></div>
+                        <div className="flex flex-col gap-2 font-mono text-[11px] uppercase tracking-wider">
+                            <a href="mailto:matt@audiofreaksmusic.com" className="text-white/60 hover:text-white group flex items-center gap-2 transition-colors">
+                                <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors"></span>
+                                matt@audiofreaksmusic.com
+                            </a>
+                            <a href="https://www.audiofreaksmusic.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white group flex items-center gap-2 transition-colors">
+                                <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors"></span>
+                                www.audiofreaksmusic.com
+                            </a>
+                        </div>
                     </div>
                     <div className="flex flex-col gap-4 font-mono text-xs uppercase tracking-widest">
                         <a href="#" className="text-white/70 hover:text-accent transition-colors">Privacy Policy</a>
